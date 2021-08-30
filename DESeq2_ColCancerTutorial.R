@@ -65,10 +65,10 @@ dim(dds_cc[rowSums(counts(dds_cc)) > 5, ]) #check what effect this filter will h
 #apply filter 
 dds_cc <- dds_cc[rowSums(counts(dds_cc)) >5,]
 
-#set up multicores
-BiocManager::install("BiocParallel")
-library(BiocParallel)
-register(MulticoreParam(4)) #register number of cores to use 
+#set up multicores (if needed) 
+#BiocManager::install("BiocParallel")
+#library(BiocParallel)
+#register(MulticoreParam(4)) #register number of cores to use 
 
 #running the pipeline
 dds_cc <- DESeq(dds_cc)
